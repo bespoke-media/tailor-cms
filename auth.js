@@ -23,7 +23,7 @@ passport.use(
 
 passport.serializeUser(function (user, cb) {
   process.nextTick(function () {
-    cb(null, { email: user.emails[0].value, name: user.displayName });
+    cb(null, { email: user.emails[0].value, name: user.displayName, picture: user.photos[0].value });
   });
 });
 
@@ -51,7 +51,8 @@ router.get(
   function (req, res) {
     const email = req.user.emails[0].value;
     const name = req.user.displayName;
-    res.render('login-success', { user: { email, name }, logoutHref: '/auth/google/logout', continueHref: '/', });
+    const picture = req.user.photos[0].value
+    res.render('login-success', { user: { email, name, picture }, logoutHref: '/auth/google/logout', continueHref: '/', });
   }
 );
 

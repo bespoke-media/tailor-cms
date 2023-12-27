@@ -32,7 +32,7 @@ app.use('/auth', authRouter);
 
 app.get('/', function (req, res) {
   if (req.user) {
-    res.render('home', { user: req.user });
+    res.render('home', { user: req.user, logoutHref: '/auth/google/logout' });
   } else {
     res.render('login', { title: 'Login', loginHref: '/auth/google/login' });
   }

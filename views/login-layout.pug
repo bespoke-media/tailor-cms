@@ -1,4 +1,14 @@
 extends layout 
+
+mixin icon-container
+  ul.mt-6.flex.flex-col.items-start.w-fit.mx-auto
+    block
+
+mixin icon(src, text, href)
+  li: a(href=href).flex.items-center.justify-center.p-1
+    img(src=`/svg/icon-${src}.svg` alt='').mr-2
+    | #{text}
+
 block content
   .min-h-screen.flex.flex-col.bg-cyan-50
     .mx-auto.bg-slate-50.bm-login-container.rounded-xl.border-2.border-cyan-600.p-6.text-center
