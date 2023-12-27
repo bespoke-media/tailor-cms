@@ -1,0 +1,10 @@
+extends login-layout
+block login-content
+  h1.text-2xl.mb-6 Welcome to Tailor
+  .mb-6 
+    h2.text-lg #{user.name}
+    span.text-slate-600 #{user.email}
+  p You have been successfully logged in.
+  ul.mt-6.underline
+    li: a(href=continueHref) Continue
+    li: a(href=logoutHref) Logout

@@ -1,0 +1,18 @@
+- const siteTitle = 'Tailor by Bespoke Media'
+- const description = 'We provide a range of new media services such as websites and apps for sales, marketing and business. We design each project to a unique spec, crafted and briefed in detailed collaboration with each client.'
+- const themeColor = '#CFE1E5'
+- const email = 'contact@bespokemedia.net'
+doctype html 
+html(lang='en')
+  head 
+    meta(charset='utf-8')
+    if title
+      title #{title} - #{siteTitle}
+    else
+      title #{siteTitle}
+    meta(name='description' content=description)
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    meta(name='theme-color' content=themeColor)
+    link(rel='stylesheet' href='/style.css')
+  body.min-h-screen.flex.flex-col
+    block content
